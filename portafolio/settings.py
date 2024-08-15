@@ -52,13 +52,14 @@ INSTALLED_APPS = [
     'backend',
     "corsheaders",
     'rest_framework',
-    'storages'
+    'storages',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -168,7 +169,7 @@ USE_TZ = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 # where Django will also look for static files
 STATICFILES_DIR = [
